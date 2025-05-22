@@ -1,1 +1,19 @@
-/* You can add global styles to this file, and also import other style files */
+/* Thème jour : dunes et mer */
+:root {
+  --header-bg-color: #87ceeb; /* Bleu ciel */
+  --header-text-color: #2f4f4f; /* Gris foncé */
+  --primary-color: #f4a460; /* Sable */
+  --secondary-color: #ffffff; /* Blanc */
+  --background-color: #f0e68c; /* Jaune pâle pour le fond */
+  --text-color: #2f4f4f; /* Gris foncé */
+}
+
+/* Thème nuit : port et reflets */
+body.dark-mode {
+  --header-bg-color: #000000; /* Noir profond */
+  --header-text-color: #ffffff; /* Blanc pur */
+  --primary-color: #1e90ff; /* Bleu clair lumineux */
+  --secondary-color: #333333; /* Gris foncé pour les éléments secondaires */
+  --background-color: #121212; /* Noir doux pour le fond */
+  --text-color: #e0e0e0; /* Gris clair pour le texte */
+}

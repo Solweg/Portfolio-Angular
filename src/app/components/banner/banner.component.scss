@@ -1,0 +1,72 @@
+.banner {
+  width: 100%;
+  height: 100vh; /* Prend toute la hauteur de l'écran */
+  background: url('/assets/banner-day.jpg') no-repeat center center/cover; /* Image pour le mode jour */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-color); /* Utilise la couleur du texte */
+  text-align: center;
+}
+
+body.dark-mode .banner {
+  background: url('/assets/banner-night.jpg') no-repeat center center/cover; /* Image pour le mode nuit */
+}
+
+.banner-content {
+  max-width: 800px;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.8); /* Fond semi-transparent pour le thème jour */
+  border-radius: 10px;
+  transition: background 0.3s, color 0.3s; /* Transition pour le changement de thème */
+}
+
+body.dark-mode .banner-content {
+  background: rgba(0, 0, 0, 0.9); /* Fond noir presque opaque pour le thème nuit */
+  color: var(--text-color, #ffffff); /* Texte blanc pour le thème nuit */
+}
+
+.banner h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: var(--header-text-color); /* Couleur du texte principal */
+}
+
+body.dark-mode .banner h1 {
+  color: #ffffff; /* Texte blanc pur pour le titre en mode nuit */
+}
+
+.banner p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  color: var(--text-color); /* Couleur du texte secondaire */
+}
+
+body.dark-mode .banner p {
+  color: #d3d3d3; /* Texte gris clair pour le mode nuit */
+}
+
+.cta-button {
+  background-color: var(--primary-color); /* Couleur principale */
+  color: var(--secondary-color); /* Couleur secondaire */
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s; /* Ajout d'une transition pour le hover */
+}
+
+.cta-button:hover {
+  background-color: var(--primary-color-hover, #4682b4); /* Couleur au survol */
+  transform: scale(1.05); /* Légère mise en avant au survol */
+}
+
+body.dark-mode .cta-button {
+  background-color: #1e90ff; /* Bleu clair lumineux pour le thème nuit */
+  color: #ffffff; /* Texte blanc pour le bouton en mode nuit */
+}
+
+body.dark-mode .cta-button:hover {
+  background-color: #4682b4; /* Bleu acier pour le survol en mode nuit */
+}

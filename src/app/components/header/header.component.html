@@ -1,1 +1,13 @@
-<p>header works!</p>
+<header class="header">
+  <button class="theme-toggle" (click)="toggleTheme()">
+    <mat-icon>{{ isDarkMode ? "dark_mode" : "light_mode" }}</mat-icon>
+  </button>
+  <nav class="nav">
+    <ul>
+      <li><a href="#expertise">Compétences</a></li>
+      <li><a href="#timeline">Parcours</a></li>
+      <li><a href="#projects">Projets</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
