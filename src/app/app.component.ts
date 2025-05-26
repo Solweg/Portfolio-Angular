@@ -24,4 +24,15 @@ import { MatIconModule } from '@angular/material/icon'; // Import pour les icôn
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent { }
+export class AppComponent {
+  isDarkMode = false; // État du mode sombre
+
+  toggleTheme() {
+    this.isDarkMode = !this.isDarkMode;
+    if (this.isDarkMode) {
+      document.body.classList.add('dark-mode'); // Ajoute la classe 'dark-mode'
+    } else {
+      document.body.classList.remove('dark-mode'); // Retire la classe 'dark-mode'
+    }
+  }
+}

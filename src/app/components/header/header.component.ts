@@ -1,20 +1,18 @@
-import { Component } from '@angular/core';
-import { MatIconModule } from '@angular/material/icon'; // Import du module MatIcon
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [
-    MatIconModule // Ajout du module pour les icônes Material
-  ],
+  imports: [MatIconModule],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-  isDarkMode = false;
+  @Input() isDarkMode = false; // Reçoit l'état du mode sombre depuis le parent
+  @Output() toggleTheme = new EventEmitter<void>(); // Émet un événement pour basculer le thème
 
-  toggleTheme() {
-    this.isDarkMode = !this.isDarkMode;
-    document.body.classList.toggle('dark-mode', this.isDarkMode);
+  onToggleTheme() {
+    this.toggleTheme.emit(); // Notifie le parent de basculer le thème
   }
 }

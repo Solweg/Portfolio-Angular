@@ -1,5 +1,10 @@
-<app-header></app-header>
-<app-banner></app-banner>
+<app-header
+    [isDarkMode]="isDarkMode"
+    (toggleTheme)="toggleTheme()">
+</app-header>
+<app-banner [isDarkMode]="isDarkMode"
+    (toggleTheme)="toggleTheme()">
+</app-banner>
 <app-expertise></app-expertise>
 <app-timeline></app-timeline>
 <app-project></app-project>

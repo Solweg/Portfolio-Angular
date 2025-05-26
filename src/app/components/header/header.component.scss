@@ -14,16 +14,27 @@
   flex-wrap: wrap;
 }
 
-.theme-toggle {
-  background: none;
-  border: none;
-  color: var(--header-text-color); /* Couleur du bouton */
-  font-size: 1.5rem;
-  cursor: pointer;
+button[mat-icon-button] {
+  background: none; /* Supprime le fond */
+  border: none; /* Supprime les bordures */
+  padding: 0; /* Supprime les marges internes */
+  margin: 0; /* Supprime les marges externes */
+  box-shadow: none; /* Supprime les ombres */
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer; /* Ajoute un curseur pointer */
 }
+
+button[mat-icon-button]:hover {
+  background: none; /* Pas de fond au survol */
+}
+
+mat-icon {
+  font-size: 24px; /* Taille de l'icône */
+  color: var(--header-text-color); /* Couleur de l'icône */
+}
+
 
 .nav {
   margin-left: auto;
