@@ -3,12 +3,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
-  background-color: var(--header-bg-color); /* Fond du header */
-  color: var(--header-text-color); /* Couleur du texte */
+  padding: 1rem 2rem; /* Gère l'espace interne */
+  background-color: var(--header-bg-color);
+  color: var(--header-text-color);
   position: fixed;
-  top: 0;
-  left: 0;
   z-index: 1000;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   flex-wrap: wrap;
@@ -17,8 +15,6 @@
 button[mat-icon-button] {
   background: none; /* Supprime le fond */
   border: none; /* Supprime les bordures */
-  padding: 0; /* Supprime les marges internes */
-  margin: 0; /* Supprime les marges externes */
   box-shadow: none; /* Supprime les ombres */
   display: flex;
   align-items: center;
@@ -26,15 +22,18 @@ button[mat-icon-button] {
   cursor: pointer; /* Ajoute un curseur pointer */
 }
 
-button[mat-icon-button]:hover {
-  background: none; /* Pas de fond au survol */
+button[mat-icon-button]:hover mat-icon {
+  color: var(--primary-color, #1e90ff); /* Même couleur que le menu au hover */
+}
+
+body.dark-mode button[mat-icon-button]:hover mat-icon {
+  color: var(--primary-color, #1e90ff); /* Même couleur en mode nuit */
 }
 
 mat-icon {
-  font-size: 24px; /* Taille de l'icône */
-  color: var(--header-text-color); /* Couleur de l'icône */
+  color: var(--header-text-color);
+  transition: color 0.3s;
 }
-
 
 .nav {
   margin-left: auto;
@@ -51,8 +50,8 @@ mat-icon {
 
 .nav a {
   text-decoration: none;
+  font-size: 1.25rem; /* Taille de police des liens */
   color: inherit;
-  font-weight: bold;
   transition: color 0.3s;
 }
 
@@ -61,7 +60,8 @@ mat-icon {
 }
 
 /* --- Responsive styles --- */
-@media (max-width: 768px) { /* Tablettes et mobiles */
+@media (max-width: 768px) {
+  /* Tablettes et mobiles */
   .header {
     flex-direction: column; /* Empile les éléments verticalement */
     align-items: center; /* Centre les éléments horizontalement */
@@ -75,7 +75,7 @@ mat-icon {
 
   .nav {
     margin-left: 0; /* Supprime la marge gauche */
-    margin-right: 0; 
+    margin-right: 0;
     width: 100%; /* Le menu prend toute la largeur */
     justify-content: center; /* Centre le menu horizontalement */
   }

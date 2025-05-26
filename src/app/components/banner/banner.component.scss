@@ -1,22 +1,29 @@
-
 .banner {
   width: 100%;
-  height: 100vh; /* Prend toute la hauteur de l'écran */
-  background: url('/assets/banner-day.jpg') no-repeat center center/cover; /* Image pour le mode jour */
+  height: 80vh; /* Prend toute la hauteur de l'écran */
+  background: url("/assets/banner-day.jpg") no-repeat center center/cover; /* Image pour le mode jour */
+  background-attachment: fixed;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   color: var(--text-color); /* Utilise la couleur du texte */
   text-align: center;
 }
 body.dark-mode .banner {
-  background: url('/assets/banner-night.jpg') no-repeat center center/cover;
+  background: url("/assets/banner-night.jpg") no-repeat center center/cover;
+  background-attachment: fixed;
 }
 
 .banner-content {
   max-width: 800px;
-  padding: 1rem;
-  background: rgba(255, 255, 255, 0.8); /* Fond semi-transparent pour le thème jour */
+  width: 90vw;
+  margin-top: 18vh;
+  background: rgba(
+    255,
+    255,
+    255,
+    0.7
+  ); /* Fond semi-transparent pour le thème jour */
   border-radius: 10px;
   transition: background 0.3s, color 0.3s; /* Transition pour le changement de thème */
 }
@@ -27,7 +34,8 @@ body.dark-mode .banner-content {
 }
 
 .banner h1 {
-  font-size: 3rem;
+  font-size: 3.5rem;
+  margin-top: 1rem;
   margin-bottom: 1rem;
   color: var(--header-text-color); /* Couleur du texte principal */
 }
@@ -38,20 +46,66 @@ body.dark-mode .banner h1 {
 
 .banner p {
   font-size: 1.5rem;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   color: var(--text-color); /* Couleur du texte secondaire */
 }
 
 body.dark-mode .banner p {
   color: #d3d3d3; /* Texte gris clair pour le mode nuit */
 }
+.banner-icons {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1.7rem;
+  justify-content: center;
+}
 
+.banner-icons a {
+  color: var(--primary-color, #1e90ff);
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+}
+
+.banner-icons a:hover {
+  color: var(--primary-color-hover, #4682b4);
+}
+.icon-tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip-text {
+  visibility: hidden;
+  opacity: 0;
+  width: max-content;
+  background-color: #222;
+  color: #fff;
+  text-align: center;
+  border-radius: 4px;
+  padding: 4px 10px;
+  position: absolute;
+  z-index: 10;
+  bottom: 120%; /* au-dessus de l'icône */
+  left: 50%;
+  transform: translateX(-50%);
+  transition: opacity 0.2s;
+  pointer-events: none;
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+.icon-tooltip:hover .tooltip-text,
+.icon-tooltip:focus .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
 .cta-button {
   background-color: var(--primary-color); /* Couleur principale */
   color: var(--secondary-color); /* Couleur secondaire */
   border: none;
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
+  padding: 1rem 1.5rem;
+  font-size: 1.75rem;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s, transform 0.2s; /* Ajout d'une transition pour le hover */
