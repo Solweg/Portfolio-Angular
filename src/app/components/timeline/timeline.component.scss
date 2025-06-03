@@ -1,0 +1,120 @@
+.timeline-section, .timeline, .timeline-item, .timeline-content {
+  font-size: 1rem !important;
+}
+.timeline-section {
+  padding: 4rem 2rem;
+  background: var(--background-color);
+  color: var(--text-color);
+  text-align: center;
+}
+
+.timeline-section h2 {
+  font-size: 2.3rem;
+  color: var(--primary-color);
+  margin-bottom: 3rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.timeline {
+  position: relative;
+  margin: 0 auto;
+  max-width: 700px;
+  padding-left: 20px;
+  border-left: 4px solid var(--primary-color);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 3rem;
+  text-align: left;
+  animation: fadeInUp 0.8s cubic-bezier(.39,.575,.56,1) both;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -13px;
+  top: 8px;
+  width: 22px;
+  height: 22px;
+  background: var(--primary-color);
+  border-radius: 50%;
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 4px rgba(244,164,96,0.15);
+  z-index: 2;
+  transition: background 0.3s;
+}
+
+.timeline-item:hover .timeline-dot {
+  background: var(--primary-color-hover, #e38b29);
+}
+
+.timeline-content {
+  background: rgba(255,255,255,0.85);
+  border-radius: 10px;
+  padding: 1.2rem 1.5rem;
+  margin-left: 30px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+  transition: box-shadow 0.2s, background 0.2s;
+}
+
+.timeline-content h3 {
+  font-size: 1.2rem;
+  margin: 0 0 0.3rem 0;
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+.timeline-orga {
+  font-size: 1rem;
+  color: var(--text-color);
+  font-weight: 400;
+  opacity: 0.7;
+}
+
+.timeline-date {
+  font-size: 0.95rem;
+  color: #888;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.timeline-content p {
+  margin: 0.5rem 0 0 0;
+  font-size: 1.05rem;
+}
+
+@media (max-width: 600px) {
+  .timeline {
+    padding-left: 10px;
+    max-width: 100%;
+  }
+  .timeline-content {
+    padding: 1rem 0.7rem;
+    margin-left: 20px;
+  }
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Mode nuit */
+body.dark-mode .timeline-content {
+  background: rgba(30, 36, 50, 0.98);
+  color: #eaf6ff;
+}
+
+body.dark-mode .timeline-dot {
+  background: #1e90ff;
+  box-shadow: 0 0 0 4px #1e90ff33;
+}

@@ -1,14 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
-
+html, body {
+  font-size: 16px !important;
+}
 html, body, .banner, .banner-content, .banner h1, .banner p, .cta-button {
   font-family: 'Roboto', Arial, Helvetica, sans-serif;
-}/* Thème jour : dunes et mer */
+}
+/* Thème jour : dunes et mer */
 :root {
   --header-bg-color: #87ceeb; /* Bleu ciel */
-  --header-text-color:#000000; /* Gris foncé */
+  --header-text-color: #000000; /* Gris foncé */
   --primary-color: #f4a460; /* Sable */
   --secondary-color: #ffffff; /* Blanc */
-  --background-color: #f0e68c; /* Jaune pâle pour le fond */
+  --background-color: #faf7dc;  /* Jaune pâle pour le fond */
   --text-color: #2f4f4f; /* Gris foncé */
 }
 html,

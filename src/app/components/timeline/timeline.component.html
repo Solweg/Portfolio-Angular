@@ -1,1 +1,16 @@
-<p>timeline works!</p>
+<section class="timeline-section">
+  <h2>Mon Parcours</h2>
+  <div class="timeline">
+    <div class="timeline-item" *ngFor="let item of timelineItems" #timelineCard>
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <h3>
+          {{ item.title }}
+          <span *ngIf="item.orga" class="timeline-orga"><br>{{ item.orga }}</span>
+        </h3>
+        <span class="timeline-date">{{ item.date }}</span>
+        <p [innerHTML]="item.desc"></p>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,126 @@
+.expertise {
+  padding: 4rem 2rem;
+  background: var(--background-color);
+  color: var(--text-color);
+  text-align: center;
+}
+.expertise h2 {
+  font-size: 2.8rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+  color: var(--primary-color);
+  margin-bottom: 2.5rem;
+  position: relative;
+  display: inline-block;
+  /* On retire le background-clip pour garder une couleur franche */
+  background: none;
+  -webkit-background-clip: initial;
+  -webkit-text-fill-color: initial;
+  text-shadow: 0 2px 8px rgba(244, 164, 96, 0.1); /* Légère ombre pour le relief */
+}
+body.dark-mode .expertise h2 {
+  color: #eaf6ff; /* Bleu très clair, lisible sur fond sombre */
+  text-shadow: 0 2px 8px rgba(30, 144, 255, 0.2), 0 0 0 #000, 0 0 8px #1e90ff44; /* Halo lumineux bleu subtil */
+  font-weight: 900;
+  letter-spacing: 1px;
+  background: none;
+  -webkit-background-clip: initial;
+  -webkit-text-fill-color: initial;
+  opacity: 1;
+}
+.expertise h2::after {
+  content: "";
+  display: block;
+  margin: 0.5rem auto 0 auto;
+  width: 60%;
+  height: 5px;
+  border-radius: 3px;
+  background: linear-gradient(90deg, var(--primary-color), #ffe082 80%);
+  opacity: 0.7;
+}
+
+.expertise-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.expertise-card {
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
+  padding: 2rem 1.5rem;
+  max-width: 350px;
+  min-width: 260px;
+  flex: 1 1 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.expertise-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.13);
+}
+
+.expertise-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.expertise-card p {
+  font-size: 1.05rem;
+  margin-bottom: 1.2rem;
+}
+
+.tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  justify-content: center;
+}
+
+.tech-list span {
+  background: var(--primary-color);
+  color: var(--secondary-color);
+  border-radius: 20px;
+  padding: 0.3rem 1rem;
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+  transition: background 0.2s, color 0.2s;
+}
+
+.tech-list span:hover {
+  background: var(--primary-color-hover, #e38b29);
+  color: #fff;
+}
+
+/* Mode nuit */
+/* Mode nuit pour la section expertise */
+body.dark-mode .expertise {
+  background: #181f2a; /* Bleu nuit profond */
+  color: #e0e6ed; /* Gris très clair pour le texte */
+}
+
+body.dark-mode .expertise-card {
+  background: rgba(30, 36, 50, 0.98); /* Carte sombre, presque opaque */
+  color: #f5f6fa;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
+}
+
+body.dark-mode .expertise-card h3 {
+  color: #1e90ff; /* Bleu clair pour les titres */
+}
+
+body.dark-mode .tech-list span {
+  background: #284879; /* Bleu foncé doux pour les tags */
+  color: #b6e0fe; /* Bleu clair pour le texte */
+}
+
+body.dark-mode .tech-list span:hover {
+  background: #1e90ff; /* Accent bleu vif au hover */
+  color: #fff;
+}
